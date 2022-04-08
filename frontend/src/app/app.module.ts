@@ -13,13 +13,23 @@ import { EditComponent } from './components/edit/edit.component';
 
 /*===/ Services /===*/
 import { ServiceService } from './services/service.service';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { IndexComponent } from './components/index/index.component';
+import { NavComponent } from './components/nav/nav.component';
+import { interceptorProvider } from './interceptors/prod-interceptor.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent,
+    RegistroComponent,
+    IndexComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +38,8 @@ import { ServiceService } from './services/service.service';
     HttpClientModule
   ],
   providers: [
-    ServiceService
+    ServiceService,
+    interceptorProvider
   ],
   bootstrap: [AppComponent]
 })

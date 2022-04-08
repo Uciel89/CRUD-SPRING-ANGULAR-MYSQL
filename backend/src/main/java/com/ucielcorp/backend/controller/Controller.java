@@ -3,6 +3,7 @@ package com.ucielcorp.backend.controller;
 import com.ucielcorp.backend.model.Persona;
 import com.ucielcorp.backend.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,12 +32,14 @@ public class Controller {
     }
 
     // Método para cargar una nueva persona dentro de la tabla persona
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public Persona createPerson(@RequestBody Persona p){
         return service.add(p);
     }
 
     // Método para editar una persona dentro de la tabla personas
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping(path = {"/{id}"})
     public Persona editPersona(@RequestBody Persona p, @PathVariable("id") int id){
         p.setId(id);
@@ -44,6 +47,7 @@ public class Controller {
     }
 
     // Método para eliminar un registro de la tabla
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping(path = {"/{id}"})
     public Persona delete(@PathVariable("id") long id){
         return service.deleted(id);

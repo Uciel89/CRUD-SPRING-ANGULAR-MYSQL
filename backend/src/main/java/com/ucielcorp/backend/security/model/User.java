@@ -30,7 +30,7 @@ public class User {
     // Rol y usuarios tienen una relación muchos a muchos, creamos una tabla intermedia
     // Esta tabla contiene dos campos, el id_usuario y id_rol, justamente para esa relación n:m
     @NotNull
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "usuario_rol",
             joinColumns = @JoinColumn(name = "usuario_id"),

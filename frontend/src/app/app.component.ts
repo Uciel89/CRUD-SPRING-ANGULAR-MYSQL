@@ -9,19 +9,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'frontend';
 
-  constructor(private router: Router){}
-
-  // Metodo para navegar hacia el componente listar
-  Listar(){
-    this.router.navigate(["listar"]);
-  }
-
-  // Metodo para navegar hacia el componente nuevo
-  Nuevo(){
-    this.router.navigate(["nuevo"]);
-  }
-
-
 }
 
 

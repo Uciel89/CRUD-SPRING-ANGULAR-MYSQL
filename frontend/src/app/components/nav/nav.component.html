@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navcrud">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Crud - Simple</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a routerLink="" class="nav-link" >Home</a>
+        <a routerLink="/login" class="nav-link">Iniciar sesión</a>
+        <a (click)="Listar()" *ngIf="isLogged" class="nav-link active" aria-current="page">Listar</a>
+        <a (click)="Nuevo()" *ngIf="isLogged"  class="nav-link">Nuevo</a>
+        <a (click)="onLogOut()" class="nav-link" *ngIf="isLogged">Cerrar sesión</a>
+      </div>
+    </div>
+  </div>
+</nav>
